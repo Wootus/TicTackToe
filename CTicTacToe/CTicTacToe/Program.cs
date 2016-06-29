@@ -8,7 +8,7 @@ namespace CTicTacToe
 {
     class Program
     {
-        //Array for available places on the board.
+        
 
 
 
@@ -16,29 +16,31 @@ namespace CTicTacToe
 
 
         static void Main(string[] args)
-        {
-            //test commit
+       {
+
 
             Board.BDisplay();
 
+            while (true)
+               {
 
-            
+                    player.winner();
+                    player.X_Turn();
 
-            while (!player.winner() && !player.tiegame())
-            {
-                player.X_Turn();
-                player.O_Turn();
+                    player.winner();
+                    player.O_Turn();
+                }
+
+
+
+
+
+
+               
+
             }
-
-
-
-
-
-
-            Console.ReadKey();
-
         }
-    }
+    
 
     public class Board
     {
@@ -47,7 +49,7 @@ namespace CTicTacToe
                                 'A', 'S', 'D',
                                 'Z', 'X', 'C' };
 
-       
+
 
 
         // Board method which creates board  
@@ -62,6 +64,7 @@ namespace CTicTacToe
             Console.WriteLine("     |     |      ");
             Console.WriteLine("  {0}  |  {1}  |  {2}", board[6], board[7], board[8]);
             Console.WriteLine("     |     |      ");
+
         }
 
 
@@ -72,6 +75,11 @@ namespace CTicTacToe
 
     public class player
     {
+        public static bool X_win = false;
+        public static bool O_win = false;
+        public static int moves = 0;
+
+
         public static void X_Turn()
         {
 
@@ -84,49 +92,84 @@ namespace CTicTacToe
                 Console.WriteLine("+ turn");
                 string plus = Console.ReadLine().ToUpper();
 
-                if (plus == "Q" && Board.board[0] != '+' && Board.board[0] != '-')
+                if (moves == 9)
+                {
+                    Console.Clear();
+                    Console.WriteLine("It was a tie-game");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+                else if (X_win == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("+ WON THE GAME");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+                else if (O_win == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("- WON THE GAME");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+
+
+                else if (plus == "Q" && Board.board[0] != '+' && Board.board[0] != '-')
                 {
                     Board.board[0] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "W" && Board.board[1] != '+' && Board.board[1] != '-')
                 {
                     Board.board[1] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "E" && Board.board[2] != '+' && Board.board[2] != '-')
                 {
                     Board.board[2] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "A" && Board.board[3] != '+' && Board.board[3] != '-')
                 {
                     Board.board[3] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "S" && Board.board[4] != '+' && Board.board[4] != '-')
                 {
                     Board.board[4] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "D" && Board.board[5] != '+' && Board.board[5] != '-')
                 {
                     Board.board[5] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "Z" && Board.board[6] != '+' && Board.board[6] != '-')
                 {
                     Board.board[6] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "X" && Board.board[7] != '+' && Board.board[7] != '-')
                 {
                     Board.board[7] = '+';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "C" && Board.board[8] != '+' && Board.board[8] != '-')
                 {
                     Board.board[8] = '+';
+                    moves++;
                     flag = false;
                 }
                 else
@@ -154,49 +197,82 @@ namespace CTicTacToe
                 Console.WriteLine("- turn");
                 string plus = Console.ReadLine().ToUpper();
 
-                if (plus == "Q" && Board.board[0] != '+' && Board.board[0] != '-')
+                if (moves == 9)
+                {
+                    Console.Clear();
+                    Console.WriteLine("It was a tie-game");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+                else if (X_win == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("+ WON THE GAME");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+                else if (O_win == true)
+                {
+                    Console.Clear();
+                    Console.WriteLine("- WON THE GAME");
+                    flag = false;
+                    Console.ReadLine();
+                }
+
+                else if (plus == "Q" && Board.board[0] != '+' && Board.board[0] != '-')
                 {
                     Board.board[0] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "W" && Board.board[1] != '+' && Board.board[1] != '-')
                 {
                     Board.board[1] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "E" && Board.board[2] != '+' && Board.board[2] != '-')
                 {
                     Board.board[2] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "A" && Board.board[3] != '+' && Board.board[3] != '-')
                 {
                     Board.board[3] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "S" && Board.board[4] != '+' && Board.board[4] != '-')
                 {
                     Board.board[4] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "D" && Board.board[5] != '+' && Board.board[5] != '-')
                 {
                     Board.board[5] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "Z" && Board.board[6] != '+' && Board.board[6] != '-')
                 {
                     Board.board[6] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "X" && Board.board[7] != '+' && Board.board[7] != '-')
                 {
                     Board.board[7] = '-';
+                    moves++;
                     flag = false;
                 }
                 else if (plus == "C" && Board.board[8] != '+' && Board.board[8] != '-')
                 {
                     Board.board[8] = '-';
+                    moves++;
                     flag = false;
                 }
                 else
@@ -212,62 +288,45 @@ namespace CTicTacToe
 
         }
 
-        public static bool winner()
+        public static void winner()
         {
             //This function returns true if either of the players one of the eight possible winning patterns
             if (
-                (Board.board[0] == '+' && Board.board[1] == '+' && Board.board[2] == '+')||
-                (Board.board[0] == '-' && Board.board[1] == '-' && Board.board[2] == '-')||
-
+                (Board.board[0] == '+' && Board.board[1] == '+' && Board.board[2] == '+') ||
                 (Board.board[3] == '+' && Board.board[4] == '+' && Board.board[5] == '+') ||
-                (Board.board[3] == '-' && Board.board[4] == '-' && Board.board[5] == '-') ||
-
                 (Board.board[6] == '+' && Board.board[7] == '+' && Board.board[8] == '+') ||
-                (Board.board[6] == '-' && Board.board[7] == '-' && Board.board[8] == '-') ||
-
                 (Board.board[0] == '+' && Board.board[3] == '+' && Board.board[6] == '+') ||
-                (Board.board[0] == '-' && Board.board[3] == '-' && Board.board[6] == '-') ||
-
                 (Board.board[1] == '+' && Board.board[4] == '+' && Board.board[7] == '+') ||
-                (Board.board[1] == '-' && Board.board[4] == '-' && Board.board[7] == '-') ||
-
                 (Board.board[2] == '+' && Board.board[5] == '+' && Board.board[8] == '+') ||
-                (Board.board[2] == '-' && Board.board[5] == '-' && Board.board[8] == '-') ||
-
                 (Board.board[0] == '+' && Board.board[4] == '+' && Board.board[8] == '+') ||
-                (Board.board[0] == '-' && Board.board[4] == '-' && Board.board[8] == '-') ||
-
-                (Board.board[6] == '+' && Board.board[4] == '+' && Board.board[2] == '+') ||
-                (Board.board[6] == '-' && Board.board[4] == '-' && Board.board[2] == '-') 
-
-                )
+                (Board.board[6] == '+' && Board.board[4] == '+' && Board.board[2] == '+'))
             {
-                
-                return true;
+                X_win = true;
             }
-            else
+            else if (
+
+      (Board.board[0] == '-' && Board.board[1] == '-' && Board.board[2] == '-') ||
+(Board.board[3] == '-' && Board.board[4] == '-' && Board.board[5] == '-') ||
+(Board.board[6] == '-' && Board.board[7] == '-' && Board.board[8] == '-') ||
+(Board.board[0] == '-' && Board.board[3] == '-' && Board.board[6] == '-') ||
+(Board.board[1] == '-' && Board.board[4] == '-' && Board.board[7] == '-') ||
+(Board.board[2] == '-' && Board.board[5] == '-' && Board.board[8] == '-') ||
+(Board.board[0] == '-' && Board.board[4] == '-' && Board.board[8] == '-') ||
+(Board.board[6] == '-' && Board.board[4] == '-' && Board.board[2] == '-'))
             {
-                return false;
-            }
-
-
-
-        }
-        public static bool tiegame()
-        {
-           //Returns True if there are no availeble spots on the board
-
-            if(Board.board.Any(x=> x == 'Q' || x=='W' || x=='E' || x=='A' || x=='S' || x == 'D' || x =='Z' || x =='X' || x == 'C'))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
+                O_win = true;
             }
 
         }
+
+
+
 
     }
 
 }
+
+
+
+
+
