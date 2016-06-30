@@ -127,7 +127,7 @@ namespace CTicTacToe
             foreach (var item in dalist)
             {
                 it1++;
-                if (item.Where(x => x == '+').Count() == 2 && !item.ToString().Contains("-"))
+                if (item.Where(x => x == '+').Count() == 2 && !new string(item).Contains("-"))
                 {
 
                     test = item;
@@ -138,14 +138,14 @@ namespace CTicTacToe
             foreach (var item in dalist)
             {
                 it2++;
- if (item.Where(x => x == '-').Count() == 2 && !item.ToString().Contains("+"))
+ if (item.Where(x => x == '-').Count() == 2 && !new string(item).Contains("+"))
                     return new string(item.Where(x => x != '-' && x != '+').ToArray());
             }
 
             foreach (var item in dalist)
             {
                 it3++;
-                    if (item.Where(x => x == '+').Count() == 1 && !item.ToString().Contains("-"))
+                    if (item.Where(x => x == '+').Count() == 1 && !new string(item).Contains("-"))
                     return item.Where(x => x != '+' && x != '-').First().ToString();
             }
 
