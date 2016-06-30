@@ -1,0 +1,6 @@
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\bin\Debug\CTicTacToe.exe.config
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\bin\Debug\CTicTacToe.exe
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\bin\Debug\CTicTacToe.pdb
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\obj\Debug\CTicTacToe.csprojResolveAssemblyReference.cache
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\obj\Debug\CTicTacToe.exe
+C:\Users\AAro\Desktop\TicTackToe\CTicTacToe\CTicTacToe\obj\Debug\CTicTacToe.pdb
