@@ -537,19 +537,3 @@ namespace CTicTacToe
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
