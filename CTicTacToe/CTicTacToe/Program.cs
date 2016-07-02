@@ -14,12 +14,12 @@ namespace CTicTacToe
         static void Main(string[] args)
         {
 
-         
-            
 
 
-            
-                        BDisplay();
+
+
+
+            BDisplay();
 
             while (true)
             {
@@ -47,10 +47,8 @@ namespace CTicTacToe
 
 
         public static bool X_win = false;
-                    public static bool O_win = false;
-                    public static int moves = 0;
-
-             
+        public static bool O_win = false;
+        public static int moves = 0;
 
 
 
@@ -58,7 +56,9 @@ namespace CTicTacToe
 
 
 
-        
+
+
+
 
 
 
@@ -138,14 +138,14 @@ namespace CTicTacToe
             foreach (var item in dalist)
             {
                 it2++;
- if (item.Where(x => x == '-').Count() == 2 && !new string(item).Contains("+"))
+                if (item.Where(x => x == '-').Count() == 2 && !new string(item).Contains("+"))
                     return new string(item.Where(x => x != '-' && x != '+').ToArray());
             }
 
             foreach (var item in dalist)
             {
                 it3++;
-                    if (item.Where(x => x == '+').Count() == 1 && !new string(item).Contains("-"))
+                if (item.Where(x => x == '+').Count() == 1 && !new string(item).Contains("-"))
                     return item.Where(x => x != '+' && x != '-').First().ToString();
             }
 
@@ -160,11 +160,11 @@ namespace CTicTacToe
 
 
 
-           
 
-            
 
-           
+
+
+
 
             return "?";
 
@@ -492,7 +492,7 @@ namespace CTicTacToe
                 else
                 {
                     Console.WriteLine("invalid move");
-                    
+
                     Console.ReadLine();
 
                 }
@@ -505,7 +505,7 @@ namespace CTicTacToe
 
         public static void winner()
         {
-           // This function returns true if either of the players one of the eight possible winning patterns
+            // This function returns true if either of the players one of the eight possible winning patterns
             if (
                 (board[0] == '+' && board[1] == '+' && board[2] == '+') ||
                 (board[3] == '+' && board[4] == '+' && board[5] == '+') ||
@@ -537,19 +537,3 @@ namespace CTicTacToe
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
